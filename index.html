@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Web</title>
+    <meta name="description" content="Personal website: profile, projects, album, socials." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand__dot"></span>
+          <span class="brand__text">PersonalWeb</span>
+        </a>
+
+        <button class="iconbtn header__menuBtn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+        </button>
+
+        <nav class="nav" id="nav">
+          <a class="nav__link" href="#life" data-i18n="nav_life"></a>
+          <a class="nav__link" href="#about" data-i18n="nav_about"></a>
+          <a class="nav__link" href="#projects" data-i18n="nav_projects"></a>
+          <a class="nav__link" href="#album" data-i18n="nav_album"></a>
+          <a class="nav__link" href="#social" data-i18n="nav_social"></a>
+
+          <div class="lang">
+            <label class="sr-only" for="langSelect" data-i18n="lang_label"></label>
+            <select id="langSelect" class="lang__select" aria-label="Language">
+              <option value="zh-CN">简体中文</option>
+              <option value="zh-TW">繁體中文</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__left">
+            <div class="avatar" id="avatar" aria-hidden="true"></div>
+            <div class="hero__meta">
+              <h1 class="hero__title" id="name"></h1>
+              <p class="hero__subtitle" id="headline"></p>
+              <p class="hero__desc" id="bio"></p>
+              <div class="chips" id="skills"></div>
+              <div class="hero__cta">
+                <button class="btn" id="copyEmailBtn" type="button" data-i18n="cta_copy_email"></button>
+                <a class="btn btn--ghost" id="resumeBtn" href="#" target="_blank" rel="noreferrer" data-i18n="cta_resume"></a>
+              </div>
+              <p class="muted hero__hint" id="copyHint"></p>
+            </div>
+          </div>
+
+          <div class="hero__right">
+            <div class="card heroCard">
+              <div class="heroCard__kpi">
+                <div class="heroCard__kpiNum" id="kpiProjects">0</div>
+                <div class="heroCard__kpiLabel" data-i18n="kpi_projects"></div>
+              </div>
+              <div class="heroCard__kpi">
+                <div class="heroCard__kpiNum" id="kpiTags">0</div>
+                <div class="heroCard__kpiLabel" data-i18n="kpi_tags"></div>
+              </div>
+              <div class="divider"></div>
+              <div class="heroCard__list" id="quickFacts"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="life">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="life_title"></h2>
+            <p class="section__desc" data-i18n="life_desc"></p>
+          </div>
+          <div class="lifeGrid">
+            <article class="card lifeCard">
+              <h3 class="card__title" data-i18n="life_fav_title"></h3>
+              <ul class="list" id="favList"></ul>
+            </article>
+            <article class="card lifeCard">
+              <h3 class="card__title" data-i18n="life_know_title"></h3>
+              <dl class="dl" id="knowMeInfo"></dl>
+            </article>
+            <article class="card lifeCard">
+              <h3 class="card__title" data-i18n="life_diary_title"></h3>
+              <div class="diaryTools">
+                <input class="input" id="diarySearch" type="search" />
+                <input class="input input--month" id="diaryMonth" type="month" />
+                <button class="fbtn" id="diaryAllBtn" type="button" data-i18n="diary_filter_all"></button>
+                <button class="fbtn" id="diaryThisMonthBtn" type="button" data-i18n="diary_filter_month"></button>
+                <button class="fbtn" id="diaryExpandAllBtn" type="button" data-i18n="diary_expand_all"></button>
+                <button class="fbtn" id="diaryCollapseAllBtn" type="button" data-i18n="diary_collapse_all"></button>
+              </div>
+              <div class="diaryActions">
+                <button class="btn btn--ghost" id="diaryAddBtn" type="button" data-i18n="diary_add"></button>
+              </div>
+              <form class="diaryForm" id="diaryForm" hidden>
+                <input class="input" id="diaryTitleInput" type="text" maxlength="80" />
+                <textarea class="input input--textarea" id="diaryTextInput" rows="4" maxlength="400"></textarea>
+                <div class="diaryForm__bottom">
+                  <button class="btn" id="diarySaveBtn" type="submit" data-i18n="diary_save"></button>
+                  <button class="btn btn--ghost" id="diaryCancelBtn" type="button" data-i18n="diary_cancel"></button>
+                  <span class="muted" id="diaryStatus"></span>
+                </div>
+              </form>
+              <ul class="diary" id="diaryList"></ul>
+            </article>
+            <article class="card lifeCard">
+              <h3 class="card__title" data-i18n="life_skill_title"></h3>
+              <div class="skillList" id="skillBlocks"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="about_title"></h2>
+            <p class="section__desc" data-i18n="about_desc"></p>
+          </div>
+          <div class="grid2">
+            <div class="card">
+              <h3 class="card__title" data-i18n="about_mainInfo"></h3>
+              <dl class="dl" id="mainInfo"></dl>
+            </div>
+            <div class="card">
+              <h3 class="card__title" data-i18n="about_now"></h3>
+              <ul class="list" id="nowList"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="projects_title"></h2>
+            <p class="section__desc" data-i18n="projects_desc"></p>
+          </div>
+
+          <div class="filters" id="projectFilters"></div>
+          <div class="cards" id="projectCards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="album">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="album_title"></h2>
+            <p class="section__desc" data-i18n="album_desc"></p>
+          </div>
+          <div class="album" id="albumGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="social">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-i18n="social_title"></h2>
+            <p class="section__desc" data-i18n="social_desc"></p>
+          </div>
+          <div class="social" id="socialLinks"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="muted" id="footerText"></div>
+        <a class="muted" href="#top" data-i18n="back_to_top"></a>
+      </div>
+    </footer>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__backdrop" id="modalBackdrop"></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <div class="modal__top">
+          <div class="modal__title" id="modalTitle"></div>
+          <button class="btn btn--ghost" id="modalClose" type="button" data-i18n="close"></button>
+        </div>
+        <div class="modal__content">
+          <button class="navbtn" id="modalPrev" type="button" aria-label="Previous">‹</button>
+          <img class="modal__img" id="modalImg" alt="" />
+          <button class="navbtn" id="modalNext" type="button" aria-label="Next">›</button>
+        </div>
+        <div class="modal__bottom muted" id="modalMeta"></div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
