@@ -29,3 +29,6 @@
 ## 文档
 - 需求文档：[docs/prd.md](./docs/prd.md)
 - 部署指南：[docs/deploy.md](./docs/deploy.md)
+
+## 在线地址
+- GitHub Pages：`https://LittleStarGrandma.github.io/MyPersonalWebsite/`

@@ -4,7 +4,7 @@
 
 ## 1）在 GitHub 创建仓库
 - 新建一个仓库（Public/Private 都行；公开更适合展示）
-- 仓库名建议：`personalweb`（示例）
+- 仓库名示例：`MyPersonalWebsite`
 
 ## 2）上传代码（无 Git 环境也可以）
 如果你当前机器没有安装 Git，也没关系：
@@ -28,3 +28,5 @@
 - 项目站点：`https://<你的用户名>.github.io/<仓库名>/`
 - 用户站点（如果仓库名就是 `<你的用户名>.github.io`）：`https://<你的用户名>.github.io/`
 
+示例：
+- `https://LittleStarGrandma.github.io/MyPersonalWebsite/`
