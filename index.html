@@ -8,39 +8,42 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container header__inner">
-        <a class="brand" href="#top" aria-label="Home">
-          <span class="brand__dot"></span>
-          <span class="brand__text">PersonalWeb</span>
-        </a>
+    <div class="layout">
+      <aside class="side">
+        <div class="side__inner">
+          <a class="brand" href="#top" aria-label="Home">
+            <span class="brand__dot"></span>
+            <span class="brand__text">PersonalWeb</span>
+          </a>
 
-        <button class="iconbtn header__menuBtn" id="menuBtn" aria-label="Menu" aria-expanded="false">
-          <span class="iconbtn__bar"></span>
-          <span class="iconbtn__bar"></span>
-          <span class="iconbtn__bar"></span>
-        </button>
+          <button class="iconbtn side__menuBtn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+            <span class="iconbtn__bar"></span>
+            <span class="iconbtn__bar"></span>
+            <span class="iconbtn__bar"></span>
+          </button>
 
-        <nav class="nav" id="nav">
-          <a class="nav__link" href="#life" data-i18n="nav_life"></a>
-          <a class="nav__link" href="#about" data-i18n="nav_about"></a>
-          <a class="nav__link" href="#projects" data-i18n="nav_projects"></a>
-          <a class="nav__link" href="#album" data-i18n="nav_album"></a>
-          <a class="nav__link" href="#social" data-i18n="nav_social"></a>
+          <nav class="nav sideNav" id="nav">
+            <a class="nav__link" href="#life" data-i18n="nav_life"></a>
+            <a class="nav__link" href="#about" data-i18n="nav_about"></a>
+            <a class="nav__link" href="#projects" data-i18n="nav_projects"></a>
+            <a class="nav__link" href="#album" data-i18n="nav_album"></a>
+            <a class="nav__link" href="#social" data-i18n="nav_social"></a>
 
-          <div class="lang">
-            <label class="sr-only" for="langSelect" data-i18n="lang_label"></label>
-            <select id="langSelect" class="lang__select" aria-label="Language">
-              <option value="zh-CN">简体中文</option>
-              <option value="zh-TW">繁體中文</option>
-              <option value="en">English</option>
-            </select>
-          </div>
-        </nav>
-      </div>
-    </header>
+            <div class="lang">
+              <label class="sr-only" for="langSelect" data-i18n="lang_label"></label>
+              <select id="langSelect" class="lang__select" aria-label="Language">
+                <option value="zh-CN">简体中文</option>
+                <option value="zh-TW">繁體中文</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </nav>
+        </div>
+      </aside>
 
-    <main id="top">
+      <div class="bookWrap">
+        <div class="book">
+          <main id="top">
       <section class="hero">
         <div class="container hero__inner">
           <div class="hero__left">
@@ -172,14 +175,17 @@
           <div class="social" id="socialLinks"></div>
         </div>
       </section>
-    </main>
+          </main>
 
-    <footer class="footer">
-      <div class="container footer__inner">
-        <div class="muted" id="footerText"></div>
-        <a class="muted" href="#top" data-i18n="back_to_top"></a>
+          <footer class="footer">
+            <div class="container footer__inner">
+              <div class="muted" id="footerText"></div>
+              <a class="muted" href="#top" data-i18n="back_to_top"></a>
+            </div>
+          </footer>
+        </div>
       </div>
-    </footer>
+    </div>
 
     <div class="modal" id="modal" aria-hidden="true">
       <div class="modal__backdrop" id="modalBackdrop"></div>
